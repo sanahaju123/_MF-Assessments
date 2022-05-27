@@ -1,0 +1,86 @@
+﻿@model GroceryDelivery.Entites.ApplicationUser
+@{
+    ViewData["Title"] = "Placeorder";
+}
+
+    <div class="card" style="width:70%; margin:100px;">
+        <div class="card-header bg-success text-white">
+            <h5>Place Order now</h5>
+        </div>
+        <div class="card-body">
+            @using (Html.BeginForm())
+            {
+                @Html.AntiForgeryToken()
+                @Html.ValidationSummary(true)
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            @Html.LabelFor(m => m.Name)
+                            @Html.TextBoxFor(m => m.Name, new { @class = "form-control" })
+                            <span asp-validation-for="Name" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            @Html.LabelFor(m => m.Email)
+                            @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
+                            <span asp-validation-for="Email" class="text-danger"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            @Html.LabelFor(m => m.MobileNumber)
+                            @Html.TextBoxFor(m => m.MobileNumber, new { @class = "form-control" })
+                            <span asp-validation-for="MobileNumber" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            @Html.LabelFor(m => m.PinCode)
+                            @Html.TextBoxFor(m => m.PinCode, new { @class = "form-control" })
+                            <span asp-validation-for="PinCode" class="text-danger"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            @Html.LabelFor(m => m.HouseNo_Building_Name)
+                            @Html.TextBoxFor(m => m.HouseNo_Building_Name, new { @class = "form-control" })
+                            <span asp-validation-for="HouseNo_Building_Name" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            @Html.LabelFor(m => m.Road_area)
+                            @Html.TextBoxFor(m => m.Road_area, new { @class = "form-control" })
+                            <span asp-validation-for="Road_area" class="text-danger"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            @Html.LabelFor(m => m.City)
+                            @Html.TextBoxFor(m => m.City, new { @class = "form-control" })
+                            <span asp-validation-for="City" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            @Html.LabelFor(m => m.State)
+                            @Html.TextBoxFor(m => m.State, new { @class = "form-control" })
+                            <span asp-validation-for="State" class="text-danger"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group text-center">
+                    <button type="submit" class="btn btn-primary">Place Order</button>
+                    <button class="btn btn-danger" onclick="location.href='@Url.Action("Index", "Home")';return false;">Back To Product</button>
+                </div>
+            }
+        </div>
+    </div>
+

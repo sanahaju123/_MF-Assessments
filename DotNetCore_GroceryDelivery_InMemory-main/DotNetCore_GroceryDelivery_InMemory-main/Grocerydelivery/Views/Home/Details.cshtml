@@ -1,0 +1,37 @@
+﻿@model GroceryDelivery.Entites.Product
+@{
+    ViewData["Title"] = "Details";
+}
+<div class="card" style="width:70%; margin-top:100px;">
+    <div class="card-header bg-dark text-white">
+        <h5>Product Details</h5>
+    </div>
+    <div class="card-body">
+        <table class="table table-borderless">
+            <tr>
+                <td>
+                    <b>@Html.DisplayNameFor(m => m.ProductName)</b>
+                </td>
+                <td>@Html.DisplayFor(m => m.ProductName)</td>
+                <td>
+                    <b>@Html.DisplayNameFor(m => m.Description)</b>
+                </td>
+                <td>@Html.DisplayFor(m => m.Description)</td>
+            </tr>
+            <tr>
+                <td>
+                    <b>@Html.DisplayNameFor(m => m.Amount)</b>
+                </td>
+                <td>@Html.DisplayFor(m => m.Amount)</td>
+                <td>
+                    <b>@Html.DisplayNameFor(m => m.stock)</b>
+                </td>
+                <td>@Html.DisplayFor(m => m.stock)</td>
+            </tr>
+        </table>
+        <p>
+            @Html.ActionLink("Place Order Now", "Placeorder", "Home", new { ProductId = Model.ProductId }, new { @class = "btn btn-danger" })
+            @Html.ActionLink("Back to List", "Index", "Home", new { @class = "btn btn-primary" })
+        </p>
+    </div>
+</div>

@@ -1,0 +1,33 @@
+﻿@model IEnumerable<GroceryDelivery.Entites.ProductOrder>
+        @{
+            ViewData["Title"] = "OrderInfo";
+        }
+
+        <div class="container text-center" style="margin-top:100px">
+            <div class="jumbotron mt-3">
+                <h1>Purchase Order Info</h1>
+                <p class="lead">Thanku for shopping with us your order will be processed....</p>
+                @Html.ActionLink("Shop Again", "Index", "Home", new { @class = "btn btn-primary" })
+            </div>
+        </div>
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>@Html.DisplayNameFor(m => m.OrderId)</th>
+                    <th>@Html.DisplayNameFor(m => m.ProductId)</th>
+                    <th>@Html.DisplayNameFor(m => m.UserId)</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var order in Model)
+                {
+                    <tr>
+                        <td>@order.OrderId</td>
+                        <td>@order.ProductId</td>
+                        <td>@order.UserId</td>
+                        <td>Product Details</td>
+                </tr>
+            }
+            </tbody>
+        </table>

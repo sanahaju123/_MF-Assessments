@@ -1,0 +1,18 @@
+﻿@model IList<GroceryDelivery.Entites.Menubar>
+<ul class="navbar-nav flex-grow-1">
+    @foreach (var item in Model)
+    {
+        var url = item.Url;
+        var target = "_self";
+
+        if (url.StartsWith("~"))
+        {
+            url = Url.Content(url);
+        }
+        if (item.OpenInNewWindow)
+        {
+            target = "_blank";
+        }
+        <li class="nav-item"><a class="nav-link text-white" href="@url" target="@target">@item.Title</a></li>
+    }
+</ul>

@@ -1,0 +1,22 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <AspNetCoreHostingModel>OutProcess</AspNetCoreHostingModel>
+  </PropertyGroup>
+
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.App" />
+    <!--<PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.2.0" PrivateAssets="All" />-->
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.2.4" />
+  </ItemGroup>
+
+
+  <ItemGroup>
+    <ProjectReference Include="..\GroceryDelivery.BusinessLayer\GroceryDelivery.BusinessLayer.csproj" />
+    <ProjectReference Include="..\GroceryDelivery.DataLayer\GroceryDelivery.DataLayer.csproj" />
+    <ProjectReference Include="..\GroceryDelivery.Entites\GroceryDelivery.Entites.csproj" />
+  </ItemGroup>
+
+</Project>

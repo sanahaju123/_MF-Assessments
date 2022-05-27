@@ -1,0 +1,55 @@
+﻿@model GroceryDelivery.BusinessLayer.ViewModels.ProductViewModel
+@{
+    ViewData["Title"] = "Home Page";
+}
+<div class="text-center" style="margin-top:100px;">
+    <h4>Order Your Grocery</h4>
+</div>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>@Html.DisplayNameFor(m => m.ProductName)</th>
+            <th>@Html.DisplayNameFor(m => m.Amount)</th>
+            <th>@Html.DisplayNameFor(m => m.Description)</th>
+            <th>@Html.DisplayNameFor(m => m.stock)</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (Model.PageCount() == 0)
+        {
+            <tr>
+                <td style="color:red;" colspan="12">
+                    Records not found |
+                    @Html.ActionLink("Go To Home", "Index","Home", new { @class = "btn btn-primary" })
+                </td>
+            </tr>
+        }
+        else
+        {
+            @foreach (var product in Model.PaginatedInterview())
+            {
+                <tr>
+                    <td>@product.ProductName</td>
+                    <td>@product.Amount</td>
+                    <td>@product.Description</td>
+                    <td>@product.stock</td>
+                    <td>
+                        @Html.ActionLink("Details", "Details", "Home", new { ProductId = product.ProductId, @class = "btn btn-primary" }) |
+                        @Html.ActionLink("Buy Now", "Details", "Home", new { ProductId = product.ProductId, @class = "btn btn-primary" })
+                    </td>
+                </tr>
+            }
+
+        }
+    </tbody>
+</table>
+<ul class="pagination">
+    @for (int i = 1; i <= Model.PageCount(); i++)
+    {
+        <li class="@(i == Model.CurrentPage ? "page-item active" : "page-item")">
+            <a class="page-link" href="@Url.Action("Index", new { page = i })">@i</a>
+        </li>
+
+    }
+</ul>

@@ -35,8 +35,7 @@ namespace E_Loan
                 SetCompatibilityVersion(CompatibilityVersion.Version_3_0);
 
       //To Use InMemory Db
-      //services.AddDbContext<ELoanDbContext>(options => options.UseInMemoryDatabase(databaseName: "InmemeoryAppConn"));
-      services.AddDbContext<ELoanDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("InmemeoryAppConn")));
+      services.AddDbContext<ELoanDbContext>(options => options.UseInMemoryDatabase(databaseName: "InmemeoryAppConn"));
       services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
             services.AddScoped<ILoanCustomerRepository, LoanCustomerRepository>();
             services.AddScoped<ILoanCustomerServices, LoanCustomerServices>();
@@ -44,15 +43,6 @@ namespace E_Loan
             services.AddScoped<ILoanClerkServices, LoanClerkServices>();
             services.AddScoped<ILoanManagerRepository, LoanManagerRepository>();
             services.AddScoped<ILoanManagerServices, LoanManagerServices>();
-
-            //services.AddCors(options =>
-            //{
-            //    options.AddPolicy("CorsPolicy",
-            //        builder => builder.AllowAnyOrigin()
-            //            .AllowAnyMethod()
-            //            .AllowAnyHeader()
-            //            .AllowCredentials());
-            //});
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -68,8 +58,7 @@ namespace E_Loan
                 
                 //app.UseHsts();
             }
-            //app.UseCors("CorsPolicy");
-            //app.UseHttpsRedirection();
+         
             app.UseMvc(routes =>
             {
                 routes.MapRoute(

@@ -23,7 +23,7 @@ namespace E_Loan.BusinessLayer.Services
         /// <returns></returns>
         public async Task<IEnumerable<LoanMaster>> AllLoanApplication()
         {
-            return await _clerkRepository.AllLoanApplication();
+            throw new NotImplementedException();
         }
         /// <summary>
         /// Show not recived loan application

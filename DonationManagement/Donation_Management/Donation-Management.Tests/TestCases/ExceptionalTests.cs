@@ -40,7 +40,7 @@ namespace Donation_Management.Tests.TestCases
         private readonly RegisterDonorViewModel _registerDonorViewModel;
         private readonly RegisterDonationViewModel _registerDonationViewModel;
         private readonly RegisterDonationRequestViewModel _registerDonationRequestViewModel;
-        private static string type = "Exceptional";
+        private static string type = "Exception";
         public ExceptionalTests(ITestOutputHelper output)
         {
             _ngoServices = new NgoServices(ngoservice.Object, _ngoContext);

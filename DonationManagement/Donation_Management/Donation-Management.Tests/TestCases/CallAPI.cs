@@ -19,11 +19,11 @@ namespace Donation_Management.TestCases
             Dictionary<string, TestCaseResultDto> testCaseResults = new Dictionary<string, TestCaseResultDto>();
             string customValue = System.IO.File.ReadAllText("../../../../custom.ih");
             testResults.CustomData = customValue;
-            int actualScore = 0;
+            int earnedScore = 0;
             String testStatus = "Failed";
             if (status.Equals("True"))
             {
-                actualScore = 1;
+                earnedScore = 1;
                 testStatus = "Passed";
             }
 
@@ -31,8 +31,8 @@ namespace Donation_Management.TestCases
             {
                 MethodName = testName,
                 MethodType = type,
-                EarnedScore = 1,
-                ActualScore = actualScore,
+                EarnedScore = earnedScore,
+                ActualScore = 1,
                 Status = testStatus,
                 IsMandatory = true
             });
@@ -41,7 +41,7 @@ namespace Donation_Management.TestCases
             {
                 testResults.TestCaseResults = JsonConvert.SerializeObject(testCaseResults);
                 var testResultsJson = JsonConvert.SerializeObject(testResults);
-                await _httpClient.PostAsync("https://yaksha-prod-sbfn.azurewebsites.net/api/YakshaMFAEnqueue?code=jSTWTxtQ8kZgQ5FC0oLgoSgZG7UoU9Asnmxgp6hLLvYId/GW9ccoLw===", new StringContent(testResultsJson, Encoding.UTF8, "application/json"));
+                await _httpClient.PostAsync("https://yaksha-prod-sbfn.azurewebsites.net/api/YakshaMFAEnqueue?code=jSTWTxtQ8kZgQ5FC0oLgoSgZG7UoU9Asnmxgp6hLLvYId/GW9ccoLw==", new StringContent(testResultsJson, Encoding.UTF8, "application/json"));
             }
             return status;
         }

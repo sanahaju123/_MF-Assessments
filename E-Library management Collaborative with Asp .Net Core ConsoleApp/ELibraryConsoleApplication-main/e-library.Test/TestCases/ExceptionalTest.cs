@@ -16,7 +16,7 @@ namespace e_library.Test.TestCases
         private readonly ITestOutputHelper _output;
         private Book _book;
         private Issue _issue;
-        private static string type = "Exceptional";
+        private static string type = "Exception";
         public ExceptionalTest(ITestOutputHelper output)
             {
             _output = output;

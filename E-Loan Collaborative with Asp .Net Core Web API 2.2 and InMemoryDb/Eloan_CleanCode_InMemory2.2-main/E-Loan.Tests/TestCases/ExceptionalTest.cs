@@ -31,7 +31,7 @@ namespace E_Loan.Tests.TestCases
         private LoanProcesstrans _loanProcesstrans;
         private LoanApprovaltrans _loanApprovaltrans;
         private readonly LoanApprovalViewModel _loanApproval;
-        private static string type = "Exceptional";
+        private static string type = "Exception";
         public ExceptionalTest(ITestOutputHelper output)
         {
             /// <summary>

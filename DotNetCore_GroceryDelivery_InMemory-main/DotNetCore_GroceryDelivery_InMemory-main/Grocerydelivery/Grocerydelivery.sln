@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30204.135
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Grocerydelivery", "Grocerydelivery.csproj", "{6B0F59B6-965A-4E89-9248-EBAA4A1660F4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GroceryDelivery", "GroceryDelivery.csproj", "{6B0F59B6-965A-4E89-9248-EBAA4A1660F4}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GroceryDelivery.Entites", "..\GroceryDelivery.Entites\GroceryDelivery.Entites.csproj", "{768A3171-36DC-4E3F-B640-3D429914278A}"
 EndProject
@@ -11,7 +11,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GroceryDelivery.DataLayer",
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GroceryDelivery.BusinessLayer", "..\GroceryDelivery.BusinessLayer\GroceryDelivery.BusinessLayer.csproj", "{05637B90-4928-439B-A024-DA628E048DAF}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Grocerydelivery.Tests", "..\Grocerydelevery.Tests\Grocerydelivery.Tests.csproj", "{88B37AED-A4C2-4558-8194-892B75A62C3E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GroceryDelivery.Tests", "..\Grocerydelevery.Tests\GroceryDelivery.Tests.csproj", "{88B37AED-A4C2-4558-8194-892B75A62C3E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -12,7 +12,7 @@ using Xunit.Abstractions;
 
 namespace Grocerydelevery.Tests.TestCases
 {
-    public class FuctionalTests
+    public class FunctionalTests
     {
         /// <summary>
         /// Creating Referance Variable of Service Interface and Mocking Repository Interface and class
@@ -26,7 +26,7 @@ namespace Grocerydelevery.Tests.TestCases
         private readonly ProductOrder _order;
         private static string type = "Functional";
 
-        public FuctionalTests(ITestOutputHelper output)
+        public FunctionalTests(ITestOutputHelper output)
         {
             //Creating New mock Object with value.
             _output = output;

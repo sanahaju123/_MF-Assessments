@@ -21,21 +21,6 @@ namespace GroceryDelivery.DataLayer
         public DbSet<Menubar> Menubars { get; set; }
         public DbSet<Product> Products { get; set; }
         public DbSet<ProductOrder> productOrders { get; set; }
-        /// <summary>
-        /// While Model or Table creating Applaying Primary key to Table
-        /// </summary>
-        /// <param name="modelBuilder"></param>
-        protected override void OnModelCreating(ModelBuilder modelBuilder)
-        {
-            modelBuilder.Entity<ApplicationUser>()
-                .HasKey(x => x.UserId);
-            modelBuilder.Entity<Menubar>()
-                .HasKey(x => x.Id);
-            modelBuilder.Entity<Product>()
-                .HasKey(x => x.ProductId);
-            modelBuilder.Entity<ProductOrder>()
-                .HasKey(x => x.OrderId);
-            base.OnModelCreating(modelBuilder);
-        }
+       
     }
 }

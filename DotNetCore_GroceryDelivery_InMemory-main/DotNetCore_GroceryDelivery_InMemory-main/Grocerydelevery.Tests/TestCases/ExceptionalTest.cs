@@ -23,7 +23,7 @@ namespace Grocerydelevery.Tests.TestCases
         private readonly Product _product;
         private readonly Menubar _menubar;
         private readonly ApplicationUser _user;
-        private static string type = "Exceptional";
+        private static string type = "Exception";
         public ExceptionalTest(ITestOutputHelper output)
         {
             //Creating New mock Object with value.

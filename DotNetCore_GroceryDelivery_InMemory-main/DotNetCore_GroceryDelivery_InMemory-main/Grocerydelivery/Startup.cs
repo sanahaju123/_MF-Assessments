@@ -43,12 +43,9 @@ namespace Grocerydelivery
                 options.CheckConsentNeeded = context => true;
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
-
-            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
-            //services.AddPaging();
-            //To Use InMemory Db
-            //services.AddDbContext<GroceryDbContext>(options => options.UseInMemoryDatabase(databaseName: "InmemeoryAppConn"));
-            services.AddDbContext<GroceryDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("InmemeoryAppConn")));
+            services.AddMvc(options => options.EnableEndpointRouting = false);
+            services.AddControllers(options => options.EnableEndpointRouting = false);
+            services.AddDbContext<GroceryDbContext>(options => options.UseInMemoryDatabase(Configuration.GetConnectionString("ConnStr")));
             //Injecting Services and Repository
             services.AddScoped<IGroceryRepository, GroceryRepository>();
             services.AddScoped<IGroceryServices, GroceryServices>();
